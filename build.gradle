@@ -4,12 +4,13 @@ sourceCompatibility = 1.8
 version = '1.0'
 
 dependencies {
-
+    implementation 'org.jsoup:jsoup:1.15.2'
 }
 
 jar {
     manifest {
         attributes 'Main-Class': 'foo.MainClass'
+        archiveFileName = 'getValueAriva'
     }
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
