@@ -1,8 +1,11 @@
 package foo;
 
+import java.util.ResourceBundle;
+
 public class MainClass {
     public static void main(String[] arg) {
-        String hi = "Hello World, run ./gradlew jar to create jar file in build/libs ";
-        System.out.println(hi);
+        ResourceBundle bundle = ResourceBundle.getBundle("strings");
+        System.out.println("" + bundle.getString("hello"));
+
     }
 }
