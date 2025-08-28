@@ -15,15 +15,18 @@ public class MainClass {
     public static void main(String[] arg) {
         String isin;
         String place;
+        String name;
 
-        if (arg.length<2) {
+        if (arg.length < 3) {
             System.out.println("missing arguments -> Test");
 
             isin ="LU0140636845";
             place ="Frankfurt";
+            name = "Schroder_ISF_Greater_China";
         } else {
             isin = arg[0];
             place = arg[1];
+            name = arg[2];
         }
 
         Document doc;
@@ -46,7 +49,8 @@ public class MainClass {
                 Element row = tableRowElements.get(i);
                 Elements rowItems = row.select("td");
                 if (rowItems.size()>0 && rowItems.get(0).text().equals(place)) {
-                    System.out.println(place+": "+rowItems.get(1).text().replaceAll("[^0-9,]", ""));
+                    //System.out.println(isin+"\t"+rowItems.get(1).text().replaceAll("[^0-9,]", "")+"\t"+name);
+                    System.out.println(rowItems.get(1).text().replaceAll("[^0-9,]", ""));
                     break;
                 }
             }
