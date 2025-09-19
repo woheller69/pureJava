@@ -26,9 +26,9 @@ public class MainClass {
         if (arg.length < 3) {
             System.out.println("missing arguments -> Test");
 
-            isin ="DE000A0XFSF0";
+            isin ="DE0007030009";
             place ="Tradegate";
-            name = "Demire";
+            name = "Rheinmetall";
         } else {
             isin = arg[0];
             place = arg[1];
@@ -79,7 +79,7 @@ public class MainClass {
                     } else {
                         lastPrice = lastValue.toString();
                     }
-
+                    lastPrice = lastPrice.replace(" ", "");
                     //System.out.println(isin+"\t"+lastPrice+"\t"+name);
                     System.out.println(lastPrice);
                 } else {
